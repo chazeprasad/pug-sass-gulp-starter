@@ -1,0 +1,22 @@
+extends ../layout/home
+
+block head_end
+    // App CSS
+    link(rel="stylesheet" href="./assets/css/app/style.css")
+    // ./App CSS
+
+block content
+    h2= message
+    h1 #{message}
+    div(data-include="./partial/html-partial-sample.html")
+    include ../partial/pug-partial-sample.pug
+    div#divId
+        | llll
+
+block body_end
+
+
+
+
+
+

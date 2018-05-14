@@ -1,0 +1,15 @@
+.fx-col.fx-p-15.fx-mt-15.h-center
+            .panel(ng-controller="ChartJsController")
+                .panel-body
+                    .chart-wrapper
+                        .chart-title
+                            .title-text Title
+                            .info-wrapper
+                                .info
+                                    .info-box.primary
+                                    .info-text One
+                                .info
+                                    .info-box.info
+                                    .info-text Two
+                        .chart-content
+                            canvas(id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick")
