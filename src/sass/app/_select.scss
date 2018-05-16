@@ -1,0 +1,46 @@
+.select-wrapper {
+    position: relative;
+    height: 34px;
+    margin-right: 0px;
+    i {
+        position: absolute;
+        pointer-events: none;
+        right: 2px;
+        top: 5px;
+        font-size: 24px;
+        z-index: 1000000;
+        color: #4a4a4a;
+    }
+    .select {
+        // display: none;
+        position: relative;
+        margin: 0px;
+        width: 150px;
+        padding: 5px 35px 5px 5px;
+        font-size: 16px;
+        border: 1px solid darken($color: $gray-nurse, $amount: 10);
+        border-radius: 0;
+        height: 34px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none; // background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #f3f3f3;
+        background: #f3f3f4;
+        font-size: 13px;
+        font-weight: 400;
+        color: #4a4a4a;
+        &:focus {
+            outline: none;
+        }
+        /* CAUTION: IE hackery ahead */
+        &::-ms-expand {
+            display: none;
+            /* remove default arrow in IE 10 and 11 */
+        }
+        /* target Internet Explorer 9 to undo the custom arrow */
+        @media(min-width: 0\0) {
+            background: none\9;
+            padding: 5px\9;
+        }
+    }
+}
+

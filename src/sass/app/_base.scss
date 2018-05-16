@@ -1,0 +1,42 @@
+$mountain-meadow: #1AB394;
+$madison: #2F4050;
+$lightning-yellow: #F5A623;
+$aquamarine-tradewind: #61BCAA;
+$aquamarine-ocean-green: #4AA391;
+$orange-terracota: #E3774E;
+$gray-nurse: #E9EEEA;
+$gray-tasman: #DAE1DD;
+$gray-silder-chalice: #ADADAD;
+$blue-cornflower: #1CA1D7;
+$blue-eastern: #1692C5;
+$primary-color: #4285F4;
+$default-color: #2BBBAD;
+$secondary-color: #a6c;
+$success-color: #00C851;
+$info-color: #33b5e5;
+$warning-color: #F80;
+$danger-color: #ff3547;
+$pink-color: #ec407a;
+$mdb-color: #45526e;
+$blue-grey-color: #78909c;
+$text-color: #5c676e;
+$fill-color: #f3f3f4;
+$stroke-color: #B6BBB9;
+$text-color: #888889;
+// Responsive Design
+$desktop: 1023px;
+$ipad: 767px;
+$mobile: 400px;
+$line-with: 2px;
+/* ------ Normalize ----- */
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+

@@ -1,0 +1,188 @@
+$white: #ffffff;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+%circle {
+    display: inline-block;
+    border-radius: 50%;
+}
+
+%square {
+    display: inline-block;
+    border-radius: 25%;
+}
+
+/* UTILS */
+
+@mixin center-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* CIRCLES */
+
+.circle-xs {
+    @extend %circle;
+    width: 10px;
+    height: 10px;
+}
+
+.circle-sm {
+    @extend %circle;
+    width: 16px;
+    height: 16px;
+    @media (max-width: $ipad) {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.circle-md {
+    @extend %circle;
+    width: 24px;
+    height: 24px;
+    @media (max-width: $ipad) {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.square-md {
+    @extend %square; //   width: 40px;
+    //   height: 40px;
+    width: 20px;
+    height: 20px;
+    @media (max-width: $ipad) {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.radio-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    height: 40px;
+    @media (max-width: $ipad) {
+        max-width: none;
+    }
+    label {
+        display: flex;
+        background: $white;
+        padding: 0px 10px;
+        border-radius: 50px;
+        margin: 0 10px; // border: solid $gray-tasman $line-with;
+        transition: background .2s ease;
+        cursor: pointer; // margin-bottom: 20px;
+        text-align: left;
+    }
+}
+
+// hide original radio
+input[type="radio"] {
+    display: none;
+}
+
+// simulate radio
+.circle-md {
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border: solid $orange-terracota $line-with;
+    position: relative;
+    flex-shrink: 0; //prevents shrinking
+}
+
+.circle-sm {
+    display: block;
+    @include center-absolute;
+    transition: background .2s ease;
+    //   width: 20px;
+    //   height: 20px;
+}
+
+input[type="radio"]:checked+label {
+    //   background: $gray-tasman;
+    .circle-md {
+        background: $white;
+        .circle-sm {
+            //   background-color: $gray-silder-chalice;
+            background-color: $default-color;
+        }
+    }
+}
+
+.option-label {
+    margin: 3px 10px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked+label {
+    .square-md {
+        background: $orange-terracota;
+    }
+}
+
+.checkbox-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 45%;
+    margin-left: 0%;
+    @media(max-width: $mobile) {
+        min-width: 280px;
+    }
+    &>div {
+        display: flex;
+        flex-basis: auto;
+        max-width: 320px;
+        flex-basis: 50%;
+        @media (max-width: $ipad) {
+            flex-basis: 100% !important;
+        } // simulate checkbox
+        .square-md {
+            // display: flex;
+            margin: -1px 4px 0 0;
+            vertical-align: middle;
+            box-sizing: border-box;
+            border: solid $orange-terracota $line-with;
+            position: relative;
+            transition: .2s background ease;
+            flex-shrink: 0; //prevents shrinking
+        }
+        .icon-check {
+            display: block;
+            color: $white;
+            font-size: 16px;
+            font-weight: 900;
+            @include center-absolute;
+            @media (max-width: $ipad) {
+                font-size: 25px;
+            }
+        }
+        .option-label {
+            margin: 0 0px;
+            text-align: left;
+            font-size: 15px;
+        }
+    }
+    @media (max-width: $ipad) {
+        flex-direction: column;
+        flex-wrap: unset;
+        flex-basis: auto;
+    }
+    /* INPUT */
+}
+

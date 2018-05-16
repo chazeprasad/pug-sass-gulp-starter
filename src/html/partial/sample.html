@@ -1,0 +1,39 @@
+<!-- ============================================ -->
+<div class="">
+
+    <label for="">Best time to schedule appointment:</label>
+
+    <div class="checkbox-wrapper">
+        <div class="" ng-repeat="time in timeSlots">
+            <input id="chkTime_{{time.timeId}}" type="checkbox" ng-model="time.Selected" />
+            <label for="chkTime_{{time.timeId}}">
+                <span class="square-md">
+                    <span class="icon-check">
+                        <i class="fa fa-check"></i>
+                    </span>
+                </span>
+                <span class="option-label">{{time.label}}</span>
+            </label>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- ============================================ -->
+<div class="radio-wrapper " style="width: auto;">
+    <input type="radio" id="buyer-{{$index}}" name="buyer-{{$index}}" ng-model="vm.selectedBuyer" ng-change="vm.onChangeBuyer($event, $index)"
+        ng-value="item._id">
+    <label for="buyer-{{$index}}" style="padding: 0px 2px; margin: 0px;">
+        <span class="circle-md">
+            <span class="circle-sm"></span>
+        </span>
+        <!-- <span class="option-label"></span> -->
+    </label>
+</div>
+
+<!-- ============================================ -->
+<select ng-options="o.name for o in options track by o.id" ng-model="selectedOption"></select>
+
+
+<!-- ============================================ -->
